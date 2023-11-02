@@ -130,6 +130,7 @@ const Formlar = ({ veriler }) => {
           <Form.Label>Password :</Form.Label>
 
           <Form.Control
+            id="sifre-inputu"
             type="password"
             name="password"
             value={formData.password}
@@ -145,6 +146,7 @@ const Formlar = ({ veriler }) => {
           <Form.Label>E-mail :</Form.Label>
 
           <Form.Control
+            id="mail-inputu"
             type="email"
             name="mail"
             value={formData.mail}

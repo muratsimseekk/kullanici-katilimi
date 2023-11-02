@@ -6,12 +6,18 @@ describe("Product Form Testleri", () => {
   });
 
   it("Isim inputuna isim yazmak.", () => {
+    /// Gorev1 ve 2
     const nameInput = cy.get("#isim-inputu");
 
     nameInput.type("Murat");
 
-    cy.get("#isim-inputu").invoke("val").should("eq", "Murat");
+    nameInput.invoke("val").should("eq", "Murat");
 
+    //Gorev 3
+
+    const mailInput = cy.get("#mail-inputu");
+
+    mailInput.type("muratsimseekk@gmail.com");
     // const nameInput = cy.get("#name-input");
 
     // nameInput.type("as");
