@@ -121,7 +121,7 @@ const Formlar = ({ veriler }) => {
             onChange={changeHandler}
             isInvalid={!!formlarErrors.fullName}
           />
-          <Form.Control.Feedback className="fs-2" type="invalid">
+          <Form.Control.Feedback className="validation" type="invalid">
             {formlarErrors.fullName}
           </Form.Control.Feedback>
         </FormGroup>
@@ -137,7 +137,7 @@ const Formlar = ({ veriler }) => {
             onChange={changeHandler}
             isInvalid={!!formlarErrors.password}
           />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback className="validation" type="invalid">
             {formlarErrors.password}
           </Form.Control.Feedback>
         </FormGroup>
@@ -153,7 +153,7 @@ const Formlar = ({ veriler }) => {
             onChange={changeHandler}
             isInvalid={!!formlarErrors.mail}
           />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback className="validation" type="invalid">
             {formlarErrors.mail}
           </Form.Control.Feedback>
         </FormGroup>
@@ -171,7 +171,7 @@ const Formlar = ({ veriler }) => {
             onChange={changeHandler}
             isInvalid={!!formlarErrors.active}
           />
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback className="validation" type="invalid">
             {formlarErrors.active}
           </Form.Control.Feedback>
         </FormGroup>
@@ -181,7 +181,7 @@ const Formlar = ({ veriler }) => {
         checked={product.active}
         name="active" */}
         <br />
-        <button>Submit ! </button>
+        <button id="btn-input">Submit ! </button>
       </Form>
       <div>
         <pre>{jsonString}</pre>

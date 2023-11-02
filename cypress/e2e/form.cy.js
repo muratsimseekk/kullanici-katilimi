@@ -30,6 +30,16 @@ describe("Product Form Testleri", () => {
     checkboxInput.click();
     checkboxInput.should("be.checked");
 
+    //Gorev6
+
+    const btn = cy.get("#btn-input");
+    btn.click();
+
+    //Gorev7
+
+    const vldControl = cy.get(".validation");
+    vldControl.should("be.hidden");
+
     // const nameInput = cy.get("#name-input");
 
     // nameInput.type("as");
