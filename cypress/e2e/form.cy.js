@@ -24,6 +24,12 @@ describe("Product Form Testleri", () => {
     const sifreInput = cy.get("#sifre-inputu");
     sifreInput.type("123456789");
 
+    //Gorev5
+
+    const checkboxInput = cy.get("#active");
+    checkboxInput.click();
+    checkboxInput.should("be.checked");
+
     // const nameInput = cy.get("#name-input");
 
     // nameInput.type("as");
