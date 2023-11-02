@@ -21,11 +21,11 @@ const Formlar = ({ veriler }) => {
     active: "",
   });
   const [formValid, setFormValid] = useState(true);
-  const [alinanVeri, setAlinanVeri] = useState([]);
+  const [gidenVeri, setGidenVeri] = useState([]);
 
-  const jsonString = JSON.stringify(alinanVeri);
+  const jsonString = JSON.stringify(gidenVeri);
   const changeHandler = (event) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked } = event.target; // pizza projesinde de tek fonksiyonda boyle yapacagiz.
 
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
@@ -45,14 +45,10 @@ const Formlar = ({ veriler }) => {
         .post("https://reqres.in/api/users", formData)
         .then((response) => {
           // İşlem başarılı olduğunda yapılacak işlemler
-          console.log("Veri başarıyla gönderildi:", response.data);
-
-          const gidenVeri = response.data;
-          console.log("Post yapilan veri : ", gidenVeri);
-          axios.get("https://reqres.in/api/users").then((responseGet) => {
-            setAlinanVeri(responseGet.data);
-            console.log("alinan veri", alinanVeri);
-          });
+          console.log(
+            "Veri başarıyla gönderildi:",
+            setGidenVeri(response.data)
+          );
         })
         .catch((error) => {
           // İşlem sırasında bir hata olursa yapılacak işlemler
@@ -62,7 +58,7 @@ const Formlar = ({ veriler }) => {
     // veriler(formData);
   };
 
-  const formDataSchema = Yup.object().shape({
+  let formDataSchema = Yup.object().shape({
     fullName: Yup.string()
       .required("This section can not be empty.")
       .min(3, "Can not be less than 3 characters."),
