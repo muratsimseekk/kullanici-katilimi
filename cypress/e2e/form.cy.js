@@ -18,6 +18,12 @@ describe("Product Form Testleri", () => {
     const mailInput = cy.get("#mail-inputu");
 
     mailInput.type("muratsimseekk@gmail.com");
+
+    //Gorev 4
+
+    const sifreInput = cy.get("#sifre-inputu");
+    sifreInput.type("123456789");
+
     // const nameInput = cy.get("#name-input");
 
     // nameInput.type("as");
