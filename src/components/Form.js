@@ -114,6 +114,7 @@ const Formlar = ({ veriler }) => {
         <FormGroup className="mb-2">
           <FormLabel>Full Name :</FormLabel>
           <Form.Control
+            id="isim-inputu"
             type="text"
             name="fullName"
             value={formData.fullName}
