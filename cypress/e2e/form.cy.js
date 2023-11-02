@@ -6,7 +6,11 @@ describe("Product Form Testleri", () => {
   });
 
   it("Isim inputuna isim yazmak.", () => {
-    cy.get("#isim-inputu").type("Murat");
+    const nameInput = cy.get("#isim-inputu");
+
+    nameInput.type("Murat");
+
+    cy.get("#isim-inputu").invoke("val").should("eq", "Murat");
 
     // const nameInput = cy.get("#name-input");
 
